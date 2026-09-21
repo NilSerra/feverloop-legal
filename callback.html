@@ -58,16 +58,39 @@
   <div class="card">
     <div style="font-size: 48px;">🎉</div>
     <h1>TikTok Account Connected!</h1>
-    <p>Authorization was successful for <b>@thefeverloop</b>.<br>Redirecting you back to FeverLoop Studio...</p>
-    <div class="spinner"></div>
-    <a href="index.html?connected=true" class="btn">Return to Studio &rarr;</a>
+    <p>Authorization was successful for <b>@feverloop.official</b>.<br>Copy the authorization code below:</p>
+    <div id="codeDisplay" style="background:#0d0d10;border:1px solid #3f3f46;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;color:#38bdf8;word-break:break-all;margin:16px 0;text-align:left;max-height:100px;overflow-y:auto;user-select:all;">Waiting for code...</div>
+    <button id="copyBtn" class="btn" onclick="copyAuthCode()">📋 Copy Code</button>
+    <div id="statusMsg" style="margin-top:12px;font-size:13px;color:#10b981;"></div>
   </div>
 
   <script>
-    // Auto redirect after 1.8 seconds for smooth video demo recording
-    setTimeout(() => {
-      window.location.href = "index.html?connected=true";
-    }, 1800);
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const display = document.getElementById('codeDisplay');
+    const btn = document.getElementById('copyBtn');
+    const status = document.getElementById('statusMsg');
+
+    if (code) {
+      display.textContent = code;
+      try {
+        navigator.clipboard.writeText(code).then(() => {
+          status.textContent = "✅ Copied to clipboard automatically!";
+        });
+      } catch (e) {}
+    } else {
+      display.textContent = "No authorization code found in URL.";
+      btn.style.display = "none";
+    }
+
+    function copyAuthCode() {
+      if (code) {
+        navigator.clipboard.writeText(code).then(() => {
+          status.textContent = "✅ Copied to clipboard!";
+          btn.textContent = "Copied! ✅";
+        });
+      }
+    }
   </script>
 </body>
 </html>
