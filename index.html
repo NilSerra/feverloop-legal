@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="tiktok-developers-site-verification" content="WSaY8TMne8iEdxaTOoKjcEUP0jrafDOA">
-  <title>FeverLoop Studio - TikTok Video Publisher</title>
+  <title>FeverLoop - Official Video Publisher</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <style>
     :root {
       --bg: #09090b;
@@ -39,10 +43,13 @@
       gap: 12px;
     }
     .brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      object-fit: cover;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 2px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     .brand h1 {
       font-size: 18px;
@@ -332,9 +339,9 @@
 <body>
   <header>
     <div class="brand">
-      <img src="assets/logo.jpg" alt="FeverLoop Logo">
-      <h1>FeverLoop Studio</h1>
-      <span>Content Publisher</span>
+      <img src="assets/logo.jpg" alt="FeverLoop Official App Icon">
+      <h1>FeverLoop</h1>
+      <span>Official Publisher</span>
     </div>
     <div id="authStatus">
       <div class="user-pill">
@@ -429,6 +436,26 @@
           <p>Your video is now live on TikTok under @thefeverloop feed.</p>
           <a href="https://www.tiktok.com/@thefeverloop" target="_blank" class="btn-view-tiktok">Open in TikTok Profile &rarr;</a>
         </div>
+      </div>
+    </div>
+
+    <!-- Official Brand & App Icon Identity Verification Panel -->
+    <div class="panel" style="margin-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="assets/logo.jpg" alt="FeverLoop Official App Icon" style="width: 80px; height: 80px; border-radius: 18px; background: #ffffff; padding: 4px; object-fit: contain; box-shadow: 0 4px 20px rgba(0,0,0,0.6); border: 1px solid #3f3f46;">
+        <div>
+          <div style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
+            FeverLoop
+            <span style="font-size: 11px; font-weight: 600; background: #27272a; color: #a1a1aa; padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">Official App Icon</span>
+          </div>
+          <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5; max-width: 600px;">
+            Official content publishing client for TikTok Creator account <b>@thefeverloop</b>. Unified brand identity verified across TikTok Developer Portal (Basic Info), production website, browser tab favicon, and creator profile.
+          </div>
+        </div>
+      </div>
+      <div style="font-size: 12px; color: #71717a; text-align: right;">
+        App ID: <code>7687942536488765458</code><br>
+        Version: <code>1.0.0 (Production)</code>
       </div>
     </div>
   </main>
